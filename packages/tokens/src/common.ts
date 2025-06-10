@@ -20,11 +20,11 @@ export const CAKE_TESTNET = new Token(
 
 export const CAKE_GOERLI_ARBI = new Token(
   ChainId.GOERLI_ARBI,
-  '0x3828f9eDD4A7F93BCEB61e26f3FF8bEd5213ABD8',
+  '0x13e64331DdE20Dd14cb2ba4ae704aB1351495c32',
   18,
-  'CAKE',
-  'PancakeSwap Token',
-  'https://pancakeswap.finance/',
+  'KNJFG',
+  'KNJFG Token',
+  'https://k-forceglobal.com/',
 )
 
 export const USDC_BSC = new Token(
@@ -154,10 +154,10 @@ export const BUSD_GOERLI_ARBI = new Token(
 
 export const SWAPP_GOERLI_ARBI = new Token(
   ChainId.GOERLI_ARBI,
-  '0x3828f9eDD4A7F93BCEB61e26f3FF8bEd5213ABD8',
+  '0x13e64331DdE20Dd14cb2ba4ae704aB1351495c32',
   18,
-  'pep',
-  'pep',
+  'KNJFG',
+  'KNJFG',
   '',
 )
 export const CAKE_ETH = new Token(
