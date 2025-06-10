@@ -112,7 +112,7 @@ export const additionalColors = {
 export const lightColors = {
   ...baseColors,
   ...additionalColors,
-  secondary: '#ed4b9e',
+  secondary: '#30e41b',
   secondary80: '#ed4b9e80',
   background: '#FAF9FA',
   backgroundDisabled: '#E9EAEB',
