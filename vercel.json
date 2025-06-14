@@ -1,4 +1,6 @@
 {
-  "buildCommand": "yarn build",
-  "framework": "nextjs"
+  "buildCommand": "turbo run build",
+  "framework": "nextjs",
+  "installCommand": "yarn install",
+  "outputDirectory": ".next"
 }
