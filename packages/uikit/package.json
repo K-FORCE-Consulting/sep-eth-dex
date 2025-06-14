@@ -9,6 +9,7 @@
   "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit",
   "license": "MIT",
   "scripts": {
+    "build": "yarn build:rollup",
     "start": "yarn storybook",
     "build:rollup": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
     "watch": "rollup -c -w",
