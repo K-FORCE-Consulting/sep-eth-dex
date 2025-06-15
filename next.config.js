@@ -8,13 +8,16 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   trailingSlash: true,
   images: { unoptimized: true },
+  // Force SSR mode, disable all static generation
   experimental: {
-    // Disable static optimization to prevent prerender errors
-    optimizeCss: false,
+    runtime: 'nodejs',
   },
-  // Disable static generation completely
+  // Disable static optimization completely
+  distDir: '.next',
   generateEtags: false,
   poweredByHeader: false,
+  // Export as server, not static
+  target: 'server',
 };
 
 module.exports = withVanillaExtract(nextConfig);
