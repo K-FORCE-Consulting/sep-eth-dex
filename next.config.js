@@ -6,10 +6,15 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
-  transpilePackages: ['@pancakeswap/uikit'],
-  // Remove static export for now - causes prerendering issues
   trailingSlash: true,
   images: { unoptimized: true },
+  experimental: {
+    // Disable static optimization to prevent prerender errors
+    optimizeCss: false,
+  },
+  // Disable static generation completely
+  generateEtags: false,
+  poweredByHeader: false,
 };
 
 module.exports = withVanillaExtract(nextConfig);
