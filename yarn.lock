@@ -6240,13 +6240,12 @@
     javascript-stringify "^2.0.1"
     mlly "^1.4.2"
 
-"@vanilla-extract/next-plugin@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@vanilla-extract/next-plugin/-/next-plugin-2.0.1.tgz#7e368568193bcc1975c01316d936acf942cd3b0b"
-  integrity sha512-pCM6XNtmcVByRjNqEQZewGiMEVXmc8D0nivRaFFjFFdJrBqqr5ikRi8mfZVw3NzmHih4Uk20+sExYYrMwMVMyQ==
+"@vanilla-extract/next-plugin@^2.4.14":
+  version "2.4.14"
+  resolved "https://registry.yarnpkg.com/@vanilla-extract/next-plugin/-/next-plugin-2.4.14.tgz#7bb8f198d05b55919f91ade7d8f84cfa0b703286"
+  integrity sha512-5GRgVZayLNvXJVHwVWNZp7rDAgXmF5DAyVtp9O5ZxPoOuokLWwTaIw1bYALXs/uCaeAUwilK5p14peagzFbe2w==
   dependencies:
-    "@vanilla-extract/webpack-plugin" "^2.1.5"
-    browserslist "^4.19.1"
+    "@vanilla-extract/webpack-plugin" "^2.3.22"
 
 "@vanilla-extract/private@^1.0.9":
   version "1.0.9"
@@ -6275,7 +6274,7 @@
     postcss "^8.3.6"
     postcss-load-config "^4.0.1"
 
-"@vanilla-extract/webpack-plugin@^2.1.5":
+"@vanilla-extract/webpack-plugin@^2.3.22":
   version "2.3.22"
   resolved "https://registry.yarnpkg.com/@vanilla-extract/webpack-plugin/-/webpack-plugin-2.3.22.tgz#aa0fb60f9c8218eb180d2b610c679c6bacd10dc6"
   integrity sha512-3Cx8DkbX3EeLHGbD049jjj6/bWB0VK4YFfWWsf8VXBI8dgf5SvEef1VfET22IOcT9GzLl8MqfsLr/XSo9iv67Q==
@@ -7998,7 +7997,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^4.12.0, browserslist@^4.19.1, browserslist@^4.24.0, browserslist@^4.25.0:
+browserslist@^4.12.0, browserslist@^4.24.0, browserslist@^4.25.0:
   version "4.25.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.25.0.tgz#986aa9c6d87916885da2b50d8eb577ac8d133b2c"
   integrity sha512-PJ8gYKeS5e/whHBh8xrwYK+dAvEj7JXtz6uTucnMRB8OiGTsKccFekoRrjajPBHV8oOY+2tI4uxeceSimKwMFA==

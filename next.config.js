@@ -1,10 +1,15 @@
-﻿const nextConfig = {
+﻿const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+
+const withVanillaExtract = createVanillaExtractPlugin();
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  transpilePackages: ['@pancakeswap/uikit'],
   output: 'export',
   trailingSlash: true,
   images: { unoptimized: true },
-  experimental: { esmExternals: false },
-}
+};
 
-module.exports = nextConfig
+module.exports = withVanillaExtract(nextConfig);
