@@ -59,8 +59,8 @@
     "@reduxjs/toolkit": "^1.8.2",
     "@sentry/nextjs": "^7.9.0",
     "@uniswap/token-lists": "^1.0.0-beta.19",
-    "@vanilla-extract/next-plugin": "2.0.1",
     "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/next-plugin": "2.0.1",
     "ajv": "^6.12.3",
     "bignumber.js": "^9.0.0",
     "canvas-confetti": "^1.5.1",
@@ -68,6 +68,7 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.21.3",
     "easymde": "^2.16.1",
+    "ethers": "^5.7.2",
     "fast-json-stable-stringify": "^2.1.0",
     "graphql": "^16.3.0",
     "graphql-request": "^4.2.0",
@@ -91,6 +92,7 @@
     "react-transition-group": "^4.4.1",
     "react-window": "^1.8.7",
     "recharts": "2.1.12",
+    "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "remark-gfm": "^1.0.0",
     "sharp": "^0.31.3",
@@ -120,6 +122,7 @@
     "@types/simplemde": "^1.11.7",
     "@types/styled-components": "^5.1.26",
     "@vanilla-extract/babel-plugin": "^1.2.0",
+    "deepmerge": "^4.3.1",
     "eslint": "^7.26.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-lodash": "^7.4.0",
@@ -144,7 +147,6 @@
     "tsconfig": "*",
     "turbo": "^1.9.3",
     "typechain": "^6.1.0",
-    "vitest": "^0.23.1",
-    "deepmerge": "^4.3.1"
+    "vitest": "^0.23.1"
   }
 }
