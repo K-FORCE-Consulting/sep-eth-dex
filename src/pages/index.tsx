@@ -125,16 +125,13 @@ const tvl = 6082955532.115718
     }
   }
 
-  return {
-    props: results,
-    revalidate: 60 * 60 * 24 * 30, // 30 days
-  }
+  return { props: {} }
 }
 
 IndexPage.chains = []
 
 export default IndexPage
 
-
-export async function getServerSideProps() { return { props: {} }; }
-
+export async function getServerSideProps() {
+  return { props: {} };
+}
