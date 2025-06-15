@@ -1,44 +1,47 @@
-import typescript from '@rollup/plugin-typescript';
-import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "@rollup/plugin-typescript";
+import { terser } from "rollup-plugin-terser";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 export default {
-  input: 'src/index.ts',
-  output: {
-    dir: 'dist',
-    format: 'esm',
-    preserveModules: true,
-  },
+  input: "src/index.ts",
+  output: [
+    {
+      file: "dist/index.cjs.js",
+      format: "cjs",
+      sourcemap: true,
+    },
+    {
+      file: "dist/index.esm.js",
+      format: "esm",
+      sourcemap: true,
+    },
+  ],
   plugins: [
+    peerDepsExternal(),
     resolve({
+      browser: true,
       preferBuiltins: false,
     }),
     commonjs(),
     typescript({
-      tsconfig: './tsconfig.json',
+      tsconfig: "./tsconfig.json",
       declaration: true,
-      declarationDir: 'dist',
-      rootDir: 'src',
-      exclude: ['**/*.test.*', '**/*.stories.*', 'src/storybook/**/*']
-    })
+      declarationDir: "dist/types",
+      exclude: ["**/*.test.*", "**/*.stories.*"],
+    }),
+    terser(),
   ],
   external: [
-    'react',
-    'react-dom',
-    'react/jsx-runtime',
-    'styled-components',
-    'framer-motion',
-    'styled-system',
-    'lodash',
-    'lodash/throttle',
-    'lodash/debounce',
-    'lodash/uniqueId',
-    'lodash/noop',
-    'lodash/get',
-    'lodash/kebabCase',
-    'react-popper',
-    'react-device-detect',
-    'react-transition-group',
-    '@popperjs/core'
-  ]
+    "react",
+    "react-dom",
+    "@emotion/react",
+    "@emotion/styled",
+    "styled-components",
+    "@pancakeswap/ui",
+    "@pancakeswap/ui/css/vars.css",
+    /^@pancakeswap\/ui\//,
+    /.*\.css\.ts$/,
+  ],
 };
