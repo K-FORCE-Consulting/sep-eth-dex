@@ -7,7 +7,7 @@ const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   transpilePackages: ['@pancakeswap/uikit'],
-  output: 'export',
+  // Remove static export for now - causes prerendering issues
   trailingSlash: true,
   images: { unoptimized: true },
 };
