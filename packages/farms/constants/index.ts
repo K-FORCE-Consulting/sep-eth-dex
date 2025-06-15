@@ -28,3 +28,4 @@ export const getStableConfig = async (chainId: ChainId) => {
     return []
   }
 }
+
