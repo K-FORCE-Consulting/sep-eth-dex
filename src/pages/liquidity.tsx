@@ -6,3 +6,6 @@ const LiquidityPage = () => <Liquidity />
 LiquidityPage.chains = CHAIN_IDS
 
 export default LiquidityPage
+
+
+export async function getServerSideProps() { return { props: {} }; }

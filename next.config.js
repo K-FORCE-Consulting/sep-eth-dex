@@ -6,18 +6,8 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
-  trailingSlash: true,
-  images: { unoptimized: true },
-  // Force SSR mode, disable all static generation
-  experimental: {
-    runtime: 'nodejs',
-  },
-  // Disable static optimization completely
-  distDir: '.next',
-  generateEtags: false,
-  poweredByHeader: false,
-  // Export as server, not static
-  target: 'server',
+  // Remove all experimental and invalid options
+  // Let Next.js use default behavior
 };
 
 module.exports = withVanillaExtract(nextConfig);

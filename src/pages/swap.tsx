@@ -8,3 +8,6 @@ const SwapPage = () => {
 SwapPage.chains = CHAIN_IDS
 
 export default SwapPage
+
+
+export async function getServerSideProps() { return { props: {} }; }
