@@ -6,8 +6,10 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
-  // Remove all experimental and invalid options
-  // Let Next.js use default behavior
+  // Add transpilation for workspace packages
+  experimental: {
+    transpilePackages: ['@pancakeswap/farms', '@pancakeswap/uikit'],
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);
