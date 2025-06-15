@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "state/*": ["src/state/*"],
+      "views/*": ["src/views/*"],
+      "@pancakeswap/uikit": ["packages/uikit/src/index.ts"]
+    }
+  }
+}

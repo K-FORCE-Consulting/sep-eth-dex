@@ -1,4 +1,4 @@
-import { FLAG_FARM } from 'config/flag'
+import { FLAG_FARM } from 'src/config/flag'
 import { Atom, useAtomValue } from 'jotai'
 import { atomWithStorage, createJSONStorage } from 'jotai/utils'
 
@@ -7,11 +7,13 @@ const isBrowser = typeof window !== 'undefined'
 const storage = isBrowser
   ? createJSONStorage(() => sessionStorage)
   : createJSONStorage(() => ({
-      getItem: (key: string) => {
-        return null
+      getItem: (_key: string) => null,
+      setItem: (_key: string, _value: string) => {
+        // noop for SSR fallback
       },
-      setItem: (key: string, value: string) => {},
-      removeItem: (key: string) => {},
+      removeItem: (_key: string) => {
+        // noop for SSR fallback
+      },
     }))
 
 export const featureFarmApiAtom = atomWithStorage<typeof FLAG_FARM>(

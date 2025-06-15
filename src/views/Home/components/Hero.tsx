@@ -4,14 +4,14 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
-import styled, { keyframes } from 'styled-components'
+import styled, { createGlobalStyle, keyframes } from 'styled-components'
 import bunnyImage from '../../../../public/images/home/lunar-bunny/k-force.png'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
 import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
 
-const flyingAnim = () => keyframes`
+const flyingAnim = keyframes`
   from {
-    transform: translate(0,  0px);
+    transform: translate(0, 0px);
   }
   50% {
     transform: translate(-5px, -5px);
@@ -21,7 +21,7 @@ const flyingAnim = () => keyframes`
   }
 `
 
-const fading = () => keyframes`
+const fading = keyframes`
   from {
     opacity: 0.9;
   }
@@ -39,8 +39,8 @@ const BgWrapper = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
 `
 
 const InnerWrapper = styled.div`
@@ -53,8 +53,9 @@ const BunnyWrapper = styled.div`
   width: 100%;
   animation: ${flyingAnim} 3.5s ease-in-out infinite;
   will-change: transform;
+
   > span {
-    overflow: visible !important; // make sure the next-image pre-build blur image not be cropped
+    overflow: visible !important;
   }
 `
 
@@ -79,6 +80,21 @@ const StarsWrapper = styled.div`
   }
 `
 
+const GlobalStyle = createGlobalStyle`
+  .slide-svg-dark {
+    display: none;
+  }
+  .slide-svg-light {
+    display: block;
+  }
+  [data-theme='dark'] .slide-svg-dark {
+    display: block;
+  }
+  [data-theme='dark'] .slide-svg-light {
+    display: none;
+  }
+`
+
 const starsImage: CompositeImageProps = {
   path: '/images/home/lunar-bunny/',
   attributes: [
@@ -94,22 +110,7 @@ const Hero = () => {
 
   return (
     <>
-      <style jsx global>
-        {`
-          .slide-svg-dark {
-            display: none;
-          }
-          .slide-svg-light {
-            display: block;
-          }
-          [data-theme='dark'] .slide-svg-dark {
-            display: block;
-          }
-          [data-theme='dark'] .slide-svg-light {
-            display: none;
-          }
-        `}
-      </style>
+      <GlobalStyle />
       <BgWrapper>
         <InnerWrapper>
           <SlideSvgDark className="slide-svg-dark" width="100%" />

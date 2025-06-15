@@ -1,5 +1,5 @@
 import { Link, Text } from '@pancakeswap/uikit'
-import { getBlockExploreLink, getBlockExploreName } from 'utils'
+import { getBlockExploreLink, getBlockExploreName } from '../../utils'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useTranslation } from '@pancakeswap/localization'
 import truncateHash from '@pancakeswap/utils/truncateHash'
@@ -26,3 +26,4 @@ const DescriptionWithTx: React.FC<React.PropsWithChildren<DescriptionWithTxProps
 }
 
 export default DescriptionWithTx
+

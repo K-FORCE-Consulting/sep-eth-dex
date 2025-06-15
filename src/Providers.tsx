@@ -6,7 +6,7 @@ import { fetchStatusMiddleware } from 'hooks/useSWRContract'
 import { Store } from '@reduxjs/toolkit'
 import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'next-themes'
 import { WagmiProvider } from '@pancakeswap/wagmi'
-import { client } from 'utils/wagmi'
+import { client } from './utils/wagmi'
 import { HistoryManagerProvider } from 'contexts/HistoryContext'
 
 const StyledUIKitProvider: React.FC<React.PropsWithChildren> = ({ children, ...props }) => {

@@ -1,7 +1,7 @@
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useRouter, NextRouter } from 'next/router'
 import { useEffect } from 'react'
-import { isChainSupported } from 'utils/wagmi'
+import { isChainSupported } from '../utils/wagmi'
 import { useProvider } from 'wagmi'
 import { ChainId } from '@pancakeswap/sdk'
 import { useActiveChainId } from './useActiveChainId'

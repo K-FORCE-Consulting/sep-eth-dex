@@ -1,16 +1,14 @@
 import {
-  ArrowDownIcon,
-  ArrowUpIcon,
   Box,
   Button,
   Flex,
-  InfoIcon,
   Text,
-  UserMenu,
-  UserMenuDivider,
-  UserMenuItem,
   useTooltip,
 } from '@pancakeswap/uikit'
+import ArrowDownIcon from '@pancakeswap/uikit/src/components/Svg/Icons/ArrowDown'
+import ArrowUpIcon from '@pancakeswap/uikit/src/components/Svg/Icons/ArrowUp'
+import InfoIcon from '@pancakeswap/uikit/src/components/Svg/Icons/Info'
+import { UserMenu, UserMenuDivider, UserMenuItem } from '@pancakeswap/uikit/src/widgets/Menu'
 import { ChainId, NATIVE } from '@pancakeswap/sdk'
 import { useActiveChainId, useLocalNetworkChain } from 'hooks/useActiveChainId'
 import { useNetworkConnectorUpdater } from 'hooks/useActiveWeb3React'
@@ -20,7 +18,7 @@ import { useHover } from 'hooks/useHover'
 import { useNetwork } from 'wagmi'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
 import { useMemo } from 'react'
-import { chains } from 'utils/wagmi'
+import { chains } from '../utils/wagmi'
 import { ChainLogo } from './Logo/ChainLogo'
 
 const NetworkSelect = ({ switchNetwork, chainId }) => {
@@ -158,3 +156,4 @@ export const NetworkSwitcher = () => {
     </>
   )
 }
+

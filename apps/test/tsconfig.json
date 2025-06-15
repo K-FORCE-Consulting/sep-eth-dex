@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",  // Set to current directory
+    "paths": {
+      "components/*": ["../../src/components/*"],
+      "hooks/*": ["../../src/hooks/*"],
+      "state/*": ["../../src/state/*"],
+      "style/*": ["../../src/style/*"],
+      "views/*": ["../../src/views/*"],
+      "@pancakeswap/uikit": ["../../packages/uikit/src/index.ts"],
+      "components/Providers": ["../../src/Providers.tsx"],
+      "components/Blocklist": ["../../src/components/Blocklist.tsx"]
+
+    }
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
+}
