@@ -1,7 +1,7 @@
-import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css'
-import deepmerge from 'deepmerge'
-import { Mode, tokens } from '../../packages/ui/tokens'
-import type { Theme } from '../../packages/ui/css/types'
+// import { createGlobalTheme, createGlobalThemeContract } from '@vanilla-extract/css'
+// import deepmerge from 'deepmerge'
+// import { Mode, tokens } from '../../packages/ui/tokens'
+// import type { Theme } from '../../packages/ui/css/types'
 
 const getVarName = (_value: string | null, path: string[]) => path.join('-')
 
@@ -24,6 +24,6 @@ export const lightTheme = createGlobalTheme('.light-theme', vars, {
 })
 
 export const darkTheme = createGlobalTheme('.dark-theme', vars, {
-  ...baseTokens,  
+  ...baseTokens,
   colors: tokens.colors.dark,
 })
