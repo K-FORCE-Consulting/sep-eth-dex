@@ -1,7 +1,7 @@
 import { FACTORY_ADDRESS } from '@pancakeswap/sdk'
 import { getUnixTime, sub } from 'date-fns'
 import { gql } from 'graphql-request'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { SWRConfig } from 'swr'
 import { bitQueryServerClient, infoServerClient } from 'utils/graphql'
 import { getCakeVaultAddress } from 'utils/addressHelpers'
@@ -32,7 +32,13 @@ const addressCount = 4425459
 
 const tvl = 6082955532.115718
 
-}
+export const getServerSideProps: GetServerSideProps = async () => {
+  const totalTxQuery = gql`
+    query TotalTransactions($id: ID!, $block: Block_height) {
+      pancakeFactory(id: $id, block: $block) {
+        totalTransactions
+      }
+    }
   `
 
   const days30Ago = sub(new Date(), { days: 30 })
@@ -125,13 +131,16 @@ const tvl = 6082955532.115718
     }
   }
 
-  return { props: {} }
+  return {
+    props: results
+  }
 }
 
 IndexPage.chains = []
 
 export default IndexPage
 
-export async function getServerSideProps() {
-  return { props: {} };
-}
+
+
+
+
