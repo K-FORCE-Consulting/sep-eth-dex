@@ -1,10 +1,20 @@
-import React, { cloneElement, ElementType, isValidElement } from "react";
+import React, { cloneElement, ElementType, isValidElement, ReactElement } from "react";
 import EXTERNAL_LINK_PROPS from "../../util/externalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 
-const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.Element => {
-  const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
+const Button = <E extends ElementType = "button">({
+  startIcon,
+  endIcon,
+  external = false,
+  className,
+  isLoading = false,
+  disabled = false,
+  children,
+  variant = variants.PRIMARY,
+  scale = scales.MD,
+  ...rest
+}: ButtonProps<E>) => {
   const internalProps = external ? EXTERNAL_LINK_PROPS : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
@@ -22,30 +32,30 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
       $isLoading={isLoading}
       className={classNames.join(" ")}
       disabled={isDisabled}
+      variant={variant}
+      scale={scale}
       {...internalProps}
       {...rest}
     >
       <>
         {isValidElement(startIcon) &&
-          cloneElement(startIcon, {
-            mr: "0.5rem",
+          cloneElement(startIcon as ReactElement<any>, {
+            style: { 
+              marginRight: "0.5rem", 
+              ...((startIcon as ReactElement<any>).props?.style || {}) 
+            },
           })}
         {children}
         {isValidElement(endIcon) &&
-          cloneElement(endIcon, {
-            ml: "0.5rem",
+          cloneElement(endIcon as ReactElement<any>, {
+            style: { 
+              marginLeft: "0.5rem", 
+              ...((endIcon as ReactElement<any>).props?.style || {}) 
+            },
           })}
       </>
     </StyledButton>
   );
-};
-
-Button.defaultProps = {
-  isLoading: false,
-  external: false,
-  variant: variants.PRIMARY,
-  scale: scales.MD,
-  disabled: false,
 };
 
 export default Button;

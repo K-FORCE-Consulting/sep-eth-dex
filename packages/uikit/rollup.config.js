@@ -1,12 +1,44 @@
-import typescript from "@rollup/plugin-typescript";
-import url from "@rollup/plugin-url";
-import pkg from "./package.json";
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  input: "src/index.ts",
-  output: [
-    { file: pkg.main, format: "cjs" },
-    { file: pkg.module, format: "es" },
+  input: 'src/index.ts',
+  output: {
+    dir: 'dist',
+    format: 'esm',
+    preserveModules: true,
+  },
+  plugins: [
+    resolve({
+      preferBuiltins: false,
+    }),
+    commonjs(),
+    typescript({
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist',
+      rootDir: 'src',
+      exclude: ['**/*.test.*', '**/*.stories.*', 'src/storybook/**/*']
+    })
   ],
-  plugins: [url(), typescript()],
+  external: [
+    'react',
+    'react-dom',
+    'react/jsx-runtime',
+    'styled-components',
+    'framer-motion',
+    'styled-system',
+    'lodash',
+    'lodash/throttle',
+    'lodash/debounce',
+    'lodash/uniqueId',
+    'lodash/noop',
+    'lodash/get',
+    'lodash/kebabCase',
+    'react-popper',
+    'react-device-detect',
+    'react-transition-group',
+    '@popperjs/core'
+  ]
 };

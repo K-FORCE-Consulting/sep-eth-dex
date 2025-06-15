@@ -1,5 +1,0 @@
-{
-  "framework": "nextjs",
-  "buildCommand": "yarn turbo run build:rollup --filter=@pancakeswap/uikit && next build",
-  "outputDirectory": ".next"
-}
