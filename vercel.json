@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd packages/uikit && bun run build:rollup && cd ../.. && next build",
-  "framework": "nextjs",
+  "buildCommand": "bun turbo run build:rollup --filter=@pancakeswap/uikit && next build",
+  "framework": "nextjs", 
   "installCommand": "bun install"
 }
