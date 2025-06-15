@@ -1,0 +1,6 @@
+{
+  "buildCommand": "bun turbo run build:rollup --filter=@pancakeswap/uikit && bun run build",
+  "framework": "nextjs",
+  "installCommand": "bun install",
+  "outputDirectory": ".next"
+}
