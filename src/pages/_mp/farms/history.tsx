@@ -1,5 +1,5 @@
 import FarmsMpPageLayout from 'views/Farms/MpPageLayout'
-import FarmsHistoryPage from 'pages/farms/history'
+import FarmsHistoryPage from '@pancakeswap/uikit/pages/farms/history'
 
 const MPFarmsHistoryPage = () => {
   return <FarmsHistoryPage />
