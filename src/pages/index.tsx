@@ -32,13 +32,7 @@ const addressCount = 4425459
 
 const tvl = 6082955532.115718
 
-export const getStaticProps: GetStaticProps = async () => {
-  const totalTxQuery = gql`
-    query TotalTransactions($id: ID!, $block: Block_height) {
-      pancakeFactory(id: $id, block: $block) {
-        totalTransactions
-      }
-    }
+}
   `
 
   const days30Ago = sub(new Date(), { days: 30 })
@@ -143,3 +137,4 @@ export default IndexPage
 
 
 export async function getServerSideProps() { return { props: {} }; }
+
